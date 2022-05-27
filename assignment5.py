@@ -120,7 +120,7 @@ def train_model():
             rescaled_feature = scaler.fit_transform([gf])
 
             prediction = clf.predict(rescaled_feature)[0]
-            cv2.putText(image, 'hot_dog', (20,30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0,255,255), 3)
+            cv2.putText(image, prediction[0], (20,30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0,255,255), 3)
 
             # display the output image
             plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
